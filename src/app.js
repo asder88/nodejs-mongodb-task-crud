@@ -5,10 +5,13 @@ import path from "path";
 import morgan from "morgan";
 
 const app = express();
+const host = '0.0.0.0';
+const port = process.env.PORT || 5000;
 
 //PORT SETTINGS
-app.listen(process.env.PORT || 5000);
-console.log("Server listening on port", 5000);
+app.listen(port, host, function () {
+  console.log("Server listening on port", 5000);
+});
 
 //PATHS
 app.set("views", path.join(__dirname, "views"));
